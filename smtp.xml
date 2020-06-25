@@ -9,7 +9,7 @@
   <Support>https://github.com/namshi/docker-smtp/issues</Support>
   <Description>This is a SMTP docker container for sending emails. You can also relay emails to gmail and amazon SES.</Description>
   <WebUI></WebUI>
-  <TemplateURL>https://github.com/jakezp/unraid-docker-templates/blob/master/jakezp/smtp.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/jakezp/unraid-templates/master/smtp.xml</TemplateURL>
   <Icon>https://github.com/jakezp/unraid-docker-templates/raw/master/jakezp/img/smtp.jpg</Icon>
   <Registry>https://hub.docker.com/r/namshi/smtp</Registry>
   <GitHub>https://github.com/namshi/docker-smtp</GitHub>
