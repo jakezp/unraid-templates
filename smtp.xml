@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Name>smtp</Name>
+  <Beta>False</Beta>
+  <Category>Network:Other</Category>
+  <Date>2020-06-25</Date>
+  <Overview>Docker-SMTP (https://github.com/namshi/docker-smtp)</Overview>
+  <Project>https://github.com/namshi/docker-smtp</Project>
+  <Support>https://github.com/namshi/docker-smtp/issues</Support>
+  <Description>This is a SMTP docker container for sending emails. You can also relay emails to gmail and amazon SES.</Description>
+  <WebUI></WebUI>
+  <TemplateURL>https://github.com/jakezp/unraid-docker-templates/blob/master/jakezp/smtp.xml</TemplateURL>
+  <Icon>https://github.com/jakezp/unraid-docker-templates/raw/master/jakezp/img/smtp.jpg</Icon>
+  <Registry>https://hub.docker.com/r/namshi/smtp</Registry>
+  <GitHub>https://github.com/namshi/docker-smtp</GitHub>
+  <Repository>namshi/smtp:latest</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>br0</Mode>
+  </Networking>
+  <Config 
+    Type="Port"
+    Name="Bind Port 1" 
+    Target="25" 
+    Default="25"
+    Mode="tcp"
+    Description="Container Port: 25"
+    Display="always"
+    Required="true" 
+    Mask="false">25</Config>
+  <Config 
+    Type="Variable"
+    Name="Container Variable 1" 
+    Target="MAILNAME" 
+    Default="DOMAIN.COM" 
+    Mode="" 
+    Description="Container Variable: MAILNAME"  
+    Display="always" 
+    Required="false" 
+    Mask="false"></Config>
+  <Config 
+    Type="Variable"
+    Name="Container Variable 2" 
+    Target="PORT" 
+    Default="25" 
+    Mode="" 
+    Description="Container Variable: PORT"  
+    Display="always" 
+    Required="false" 
+    Mask="false">25</Config>
+  <Config 
+    Type="Variable"
+    Name="Container Variable 3" 
+    Target="DISABLE_IPV6" 
+    Default="true" 
+    Mode="" 
+    Description="Container Variable: DISABLE_IPV6"  
+    Display="always" 
+    Required="false" 
+    Mask="false">true</Config>
+  <Config 
+    Type="Variable"
+    Name="Container Variable 4" 
+    Target="RELAY_NETWORKS" 
+    Default=":192.168.1.0/24:10.0.1.0/24::10.1.0.0/16" 
+    Mode="" 
+    Description="Container Variable: RELAY_NETWORKS"  
+    Display="always" 
+    Required="false" 
+    Mask="false">:192.168.1.0/24:10.0.1.0/24::10.1.0.0/16</Config>
+  <Config 
+    Type="Variable"
+    Name="Container Variable 5" 
+    Target="SES_REGION" 
+    Default="eu-west-1" 
+    Mode="" 
+    Description="Container Variable: SES_REGION"  
+    Display="always" 
+    Required="false" 
+    Mask="false">eu-west-1</Config>
+  <Config 
+    Type="Variable"
+    Name="Container Variable 6" 
+    Target="SES_PORT" 
+    Default="587" 
+    Mode="" 
+    Description="Container Variable: SES_PORT"  
+    Display="always" 
+    Required="false" 
+    Mask="false">587</Config>
+  <Config 
+    Type="Variable"
+    Name="Container Variable 7" 
+    Target="SES_USER" 
+    Default="ses_access_key" 
+    Mode="" 
+    Description="Container Variable: SES_USER"  
+    Display="always" 
+    Required="false" 
+    Mask="false">ses_access_key</Config>
+  <Config 
+    Type="Variable"
+    Name="Container Variable 8" 
+    Target="SES_PASSWORD" 
+    Default="aws_secret_key" 
+    Mode="" 
+    Description="Container Variable: SES_PASSWORD"  
+    Display="always" 
+    Required="false" 
+    Mask="true">aws_secret_key</Config>
+</Container>
