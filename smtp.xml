@@ -3,14 +3,14 @@
   <Name>smtp</Name>
   <Beta>False</Beta>
   <Category>Network:Other</Category>
-  <Date>2020-06-25</Date>
+  <Date>2020-06-26</Date>
   <Overview>Docker-SMTP (https://github.com/namshi/docker-smtp)</Overview>
   <Project>https://github.com/namshi/docker-smtp</Project>
   <Support>https://github.com/namshi/docker-smtp/issues</Support>
   <Description>This is a SMTP docker container for sending emails. You can also relay emails to gmail and amazon SES.</Description>
   <WebUI></WebUI>
   <TemplateURL>https://raw.githubusercontent.com/jakezp/unraid-templates/master/smtp.xml</TemplateURL>
-  <Icon>https://github.com/jakezp/unraid-docker-templates/raw/master/jakezp/img/smtp.jpg</Icon>
+  <Icon>https://github.com/jakezp/unraid-templates/raw/master/img/smtp.jpg</Icon>
   <Registry>https://hub.docker.com/r/namshi/smtp</Registry>
   <GitHub>https://github.com/namshi/docker-smtp</GitHub>
   <Repository>namshi/smtp:latest</Repository>
