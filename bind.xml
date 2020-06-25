@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Name>bind-9-dns</Name>
+  <Beta>False</Beta>
+  <Category>Network:DNS</Category>
+  <Date>2020-06-26</Date>
+  <Overview>ISC BIND9 DNS Server (https://www.bind9.net)</Overview>
+  <Project>https://github.com/ventz/docker-bind</Project>
+  <Support>https://github.com/ventz/docker-bind/issues</Support>
+  <Description>This container is a super small (~5MB compressed pull, and only ~9MB when extracted) FULL version of ISC BIND9.[br]It is ideal for an extremely secure and fast master (authoritative server), slave, recursive server/resolver, RPZ "dns firewall", or just about any other purpose you can use bind for.</Description>
+  <WebUI></WebUI>
+  <TemplateURL>https://github.com/jakezp/unraid-templates/raw/master/bind.xml</TemplateURL>
+  <Icon>https://github.com/jakezp/unraid-templates/raw/master/img/bind9.jpg</Icon>
+  <Registry>https://hub.docker.com/r/ventz/bind</Registry>
+  <GitHub>https://github.com/ventz/docker-bind</GitHub>
+  <Repository>ventz/bind:latest</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>br0</Mode>
+  </Networking>
+  <Config 
+    Type="Path"
+    Name="Bind Config" 
+    Target="/etc/bind" 
+    Default="/mnt/user/appdata/bind/config" 
+    Mode="rw" 
+    Description="Container Path: /etc/bind"  
+    Display="always" 
+    Required="true" 
+    Mask="false">/mnt/user/appdata/bind/config</Config>
+  <Config 
+    Type="Path"
+    Name="Bind Cache" 
+    Target="/var/cache/bind" 
+    Default="/mnt/user/appdata/bind/cache" 
+    Mode="rw" 
+    Description="Container Path: /var/cache/bind" 
+    Display="always" 
+    Required="true" 
+    Mask="false">/mnt/user/appdata/bind/cache</Config>
+  <Config 
+    Type="Port"
+    Name="Bind Port 1" 
+    Target="53" 
+    Default="53"
+    Mode="tcp"
+    Description="Container Port: 53 (tcp)"
+    Display="always"
+    Required="true" 
+    Mask="false">53</Config>
+  <Config 
+    Type="Port"
+    Name="Bind Port 2" 
+    Target="53" 
+    Default="53"
+    Mode="udp"
+    Description="Container Port: 53 (udp)"
+    Display="always"
+    Required="true" 
+    Mask="false">53</Config>
+  <Config 
+    Type="Variable"
+    Name="Container Variable 1" 
+    Target="TZ" 
+    Default="Africa/Johannesburg" 
+    Mode="" 
+    Description="Container Variable: TZ"  
+    Display="always" 
+    Required="false" 
+    Mask="false">Africa/Johannesburg</Config>
+  <Config 
+    Type="Variable"
+    Name="Container Variable 2" 
+    Target="dns" 
+    Default="1.1.1.1" 
+    Mode="" 
+    Description="Container Variable: dns"  
+    Display="always" 
+    Required="false" 
+    Mask="false">1.1.1.1</Config>
+</Container>
