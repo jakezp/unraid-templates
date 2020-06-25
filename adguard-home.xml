@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<Container>
+  <Name>adguard-home</Name>
+  <Beta>False</Beta>
+  <Category>Network:Dns</Category>
+  <Date>2020-06-26</Date>
+  <Overview>AdGuard Home - Docker</Overview>
+  <Project>https://adguard.com/</Project>
+  <Support>https://adguard.com/en/support.html</Support>
+  <Description>AdGuard Home is a network-wide software for blocking ads and tracking. After you set it up, it'll cover ALL your home devices, and you don't need any client-side software for that.[br]After creating the docker, open the browser and navigate to http://ipaddress:3000/ to control your AdGuard Home service.</Description>
+  <TemplateURL>https://github.com/jakezp/unraid-templates/raw/master/adguard-home.xml</TemplateURL>
+  <Icon>https://github.com/jakezp/unraid-templates/raw/master/img/adguard.png</Icon>
+  <Registry>https://hub.docker.com/r/adguard/adguardhome</Registry>
+  <Repository>adguard/adguardhome</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish/>
+  </Networking>
+  <WebUI>https://[IP]:[PORT:443]</WebUI>
+  <ExtraParams/>
+  <Labels/>
+  <Config 
+    Type="Path"
+    Name="Config directory" 
+    Target="/opt/adguardhome/conf" 
+    Default="/mnt/user/appdata/adguard/conf" 
+    Mode="rw" 
+    Description="Adguard Home config path"  
+    Display="always" 
+    Required="true" 
+    Mask="false">/mnt/user/appdata/adguard/conf</Config>
+  <Config 
+    Type="Path"
+    Name="Work directory" 
+    Target="/opt/adguardhome/work" 
+    Default="/mnt/user/appdata/adguard/work" 
+    Mode="rw" 
+    Description="Adguard Home work path"  
+    Display="always" 
+    Required="true" 
+    Mask="false">/mnt/user/appdata/adguard/work</Config>
+  <Config 
+    Type="Path"
+    Name="Cert directory" 
+    Target="/opt/adguardhome/certs" 
+    Default="/mnt/user/appdata/adguard/certs" 
+    Mode="rw" 
+    Description="Adguard Home cert path"  
+    Display="always" 
+    Required="true" 
+    Mask="false">/mnt/user/appdata/adguard/certs</Config>    
+  <Config 
+    Type="Port"
+    Name="Port 1" 
+    Target="3000" 
+    Default="3000" 
+    Mode="tcp" 
+    Description="Container Port: 3000"  
+    Display="always" 
+    Required="true" 
+    Mask="false">3000</Config>
+  <Config 
+    Type="Port"
+    Name="Port 2" 
+    Target="853" 
+    Default="853" 
+    Mode="tcp" 
+    Description="Container Port: 853"  
+    Display="always" 
+    Required="true" 
+    Mask="false">853</Config>
+  <Config 
+    Type="Port"
+    Name="Port 3" 
+    Target="443" 
+    Default="443" 
+    Mode="tcp" 
+    Description="Container Port: 443"  
+    Display="always" 
+    Required="true" 
+    Mask="false">443</Config>
+  <Config 
+    Type="Port"
+    Name="Port 4" 
+    Target="80" 
+    Default="80" 
+    Mode="tcp" 
+    Description="Container Port: 80"  
+    Display="always" 
+    Required="true" 
+    Mask="false">80</Config>
+  <Config 
+    Type="Port"
+    Name="Port 5" 
+    Target="67" 
+    Default="67" 
+    Mode="udp" 
+    Description="Container Port: 67"  
+    Display="always" 
+    Required="true" 
+    Mask="false">67</Config>
+  <Config 
+    Type="Port"
+    Name="Port 6" 
+    Target="53" 
+    Default="53" 
+    Mode="tcp" 
+    Description="Container Port: 53"  
+    Display="always" 
+    Required="true" 
+    Mask="false">53</Config>
+  <Config 
+    Type="Port"
+    Name="Port 7" 
+    Target="53" 
+    Default="53" 
+    Mode="udp" 
+    Description="Container Port: 53"  
+    Display="always" 
+    Required="true" 
+    Mask="false">53</Config>
+  <Config 
+    Type="Variable"
+    Name="Timezone Variable" 
+    Target="TZ" 
+    Default="Africa/Johannesburg" 
+    Mode="" Description="Container Variable: TZ"  
+    Display="always" 
+    Required="false" 
+    Mask="false">Africa/Johannesburg</Config>
+</Container>
