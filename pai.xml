@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Name>pai</Name>
+  <Beta>False</Beta>
+  <Category>HomeAutomation:</Category>
+  <Date>2020-06-16</Date>
+  <Overview>PAI - Paradox Alarm Interface (https://github.com/ParadoxAlarmInterface/pai)</Overview>
+  <Project>https://github.com/ParadoxAlarmInterface/pai</Project>
+  <Support>https://github.com/ParadoxAlarmInterface/pai/issues</Support>
+  <Description>Middleware that aims to connect to a Paradox Alarm panel, exposing the interface for monitoring and control via several technologies. With this interface it is possible to integrate Paradox panels with HomeAssistant, OpenHAB, Homebridge or other domotics system that supports MQTT, as well as several IM methods.[br]
+It supports MG SP EVO panels connected through a serial port, which is present in all panels  TTL 5V , or through a USB 307 module. It also supports connections using the IP150 module, both directly (firmware version &amp;lt; 4.0 or &amp;gt;= 4.40.004), and through the SITE ID (firmware versions &amp;gt;4.0).[br]
+[b][span style='color: #E80000;']Directions:[/span][/b][br]
+[b]Fixed IP address[/b] : Fixed IP address. If you require host networking, switch to advanced view.[br]
+[b]/etc/pai[/b] : PIA config location.[br]
+[b]/var/log/pai[/b] : Log file location.[br]
+[b]Port 10000[/b] is required if you want to connect to Panel with Babyware through PAI (PAI will proxy requests).[br]
+[b][span style='color: #E80000;']NB:[/span][/b][br]
+Create default config in /etc/pai. See https://github.com/ParadoxAlarmInterface/pai/wiki/Docker for more details.</Description>
+  <Icon>https://github.com/jakezp/unraid-templates/raw/master/img/pai.png</Icon>
+  <TemplateURL>https://github.com/jakezp/unraid-templates/raw/master/pai.xml</TemplateURL>
+  <Registry>https://hub.docker.com/r/paradoxalarminterface/pai/</Registry>
+  <GitHub>https://github.com/ParadoxAlarmInterface/pai</GitHub>
+  <Repository>paradoxalarminterface/pai:dev-latest</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>br0</Mode>
+  </Networking>
+  <ExtraParams>--user $(id -u):$(id -g) </ExtraParams>
+  <Config 
+    Type="Path"
+    Name="Host Path 1" 
+    Target="/etc/pai" 
+    Default="/mnt/user/appdata/pai/app" 
+    Mode="rw" 
+    Description="Container Path: /etc/pai"  
+    Display="always" 
+    Required="true" 
+    Mask="false">/mnt/user/appdata/pai/app</Config>
+  <Config 
+    Type="Path"
+    Name="Host Path 2" 
+    Target="/var/log/pai" 
+    Default="/mnt/user/appdata/pai/logs" 
+    Mode="rw" 
+    Description="Container Path: /var/log/pai" 
+    Display="always" 
+    Required="true" 
+    Mask="false">/mnt/user/appdata/pai/logs</Config>
+  <Config 
+    Type="Port"
+    Name="Host Port 1" 
+    Target="10000" 
+    Default="10000"
+    Mode="tcp"
+    Description="Container Port: 10000"
+    Display="always"
+    Required="false" 
+    Mask="false">10000</Config>
+  <Config 
+    Type="Container Variable 1"
+    Name="Variable" 
+    Target="TZ" 
+    Default="Africa/Johannesburg" 
+    Mode="" 
+    Description="Container Variable: TZ"  
+    Display="always" 
+    Required="false" 
+    Mask="false">Africa/Johannesburg</Config>
+</Container>
