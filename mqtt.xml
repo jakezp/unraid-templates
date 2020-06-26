@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Name>mosquitto-mqtt</Name>
+  <Beta>False</Beta>
+  <Category>HomeAutomation:</Category>
+  <Date>2020-06-25</Date>
+  <Overview>Eclipse Mosquitto - MQTT Server (https://github.com/eclipse/mosquitto)</Overview>
+  <Project>https://github.com/eclipse/mosquitto</Project>
+  <Support>https://github.com/eclipse/mosquitto/issues</Support>
+  <Description>Mosquitto is an open source implementation of a server for version 5.0, 3.1.1, and 3.1 of the MQTT protocol. It also includes a C and C++ client library, and the mosquitto_pub and mosquitto_sub utilities for publishing and subscribing.</Description>
+  <WebUI></WebUI>
+  <TemplateURL>https://github.com/jakezp/unraid-templates/raw/master/mqtt.xml</TemplateURL>
+  <Icon>https://github.com/jakezp/unraid-templates/raw/master/img/mqtt.png</Icon>
+  <Registry>https://hub.docker.com/_/eclipse-mosquitto</Registry>
+  <GitHub>https://github.com/eclipse/mosquitto</GitHub>
+  <Repository>eclipse-mosquitto:latest</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>br0</Mode>
+  </Networking>
+  <Config 
+    Type="Path"
+    Name="MQTT Config" 
+    Target="/mosquitto/config" 
+    Default="/mnt/user/appdata/mqtt/config" 
+    Mode="rw" 
+    Description="Container Path: /mosquitto/config"  
+    Display="always" 
+    Required="true" 
+    Mask="false">/mnt/user/appdata/mqtt/config</Config>
+  <Config 
+    Type="Path"
+    Name="MQTT Data" 
+    Target="/mosquitto/data" 
+    Default="/mnt/user/appdata/mqtt/data" 
+    Mode="rw" 
+    Description="Container Path: /mosquitto/data" 
+    Display="always" 
+    Required="true" 
+    Mask="false">/mnt/user/appdata/mqtt/data</Config>
+  <Config 
+    Type="Path"
+    Name="MQTT Logs" 
+    Target="/mosquitto/log" 
+    Default="/mnt/user/appdata/mqtt/log" 
+    Mode="rw" 
+    Description="Container Path: /mosquitto/log" 
+    Display="always" 
+    Required="true" 
+    Mask="false">/mnt/user/appdata/mqtt/log</Config>
+  <Config 
+    Type="Port"
+    Name="MQTT Port 1" 
+    Target="1883" 
+    Default="1883"
+    Mode="tcp"
+    Description="Container Port: 1883"
+    Display="always"
+    Required="true" 
+    Mask="false">1883</Config>
+  <Config 
+    Type="Port"
+    Name="MQTT Port 2" 
+    Target="9001" 
+    Default="9001"
+    Mode="tcp"
+    Description="Container Port: 9001"
+    Display="always"
+    Required="true" 
+    Mask="false">9001</Config>
+  <Config 
+    Type="Variable"
+    Name="Container Variable 1" 
+    Target="TZ" 
+    Default="Africa/Johannesburg" 
+    Mode="" 
+    Description="Container Variable: TZ"  
+    Display="always" 
+    Required="false" 
+    Mask="false">Africa/Johannesburg</Config>
+</Container>
