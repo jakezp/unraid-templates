@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<Container>
+  <Name>mqtt-admin</Name>
+  <Beta>False</Beta>
+  <Category>HomeAutomation:</Category>
+  <Date>2020-06-26</Date>
+  <Overview>MQTT Web Frontend (https://github.com/hobbyquaker/mqtt-admin)</Overview>
+  <Project>https://github.com/hobbyquaker/mqtt-admin</Project>
+  <Support>https://github.com/hobbyquaker/mqtt-admin/issues</Support>
+  <Description>MQTT Web Frontend: Publish, Subscribe and see Topic Status in a comfortable UI.[br]&#xD;
+https://hub.docker.com/r/dersimn/mqtt-admin[br]&#xD;
+[b][span style='color: #E80000;']Directions:[/span][/b][br]&#xD;
+[b]MQTT_HOST[/b] : IP Address and port of MQTT server (ip address:port)[br]&#xD;
+[b]HTTP Port[/b] : Default port 80[br]&#xD;
+[b][span style='color: #E80000;']Optional:[/span][/b][br]&#xD;
+[b]SSL Cert Path[/b]: Where to store SSL certs.[br]&#xD;
+[b]HTTPS Port[/b] : Https port. (Only use if SSL certs are supplied).[br]&#xD;
+[b]HTTPS_REDIRECT_PORT[/b] : Redirect requests http requests to https. (Only use if SSL certs are supplied).</Description>
+  <Icon>https://github.com/jakezp/unraid-templates/raw/master/img/mqtt_client.png</Icon>
+  <TemplateURL>https://github.com/jakezp/unraid-templates/raw/master/mqtt-admin.xml</TemplateURL>
+  <Registry>https://hub.docker.com/r/dersimn/mqtt-admin</Registry>
+  <Repository>dersimn/mqtt-admin</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>br0</Mode>
+  </Networking>
+  <WebUI>http://[IP]:[PORT:80]</WebUI>
+  <ExtraParams/>
+  <Config 
+    Type="Variable"
+    Name="MQTT Host" 
+    Target="MQTT_HOST" 
+    Default="192.168.1.135:9001" 
+    Mode="" 
+    Description="Container Variable: MQTT_HOST"  
+    Display="always" 
+    Required="true" 
+    Mask="false">192.168.1.135:9001</Config>
+  <Config 
+    Type="Port"
+    Name="HTTP port" 
+    Target="80" 
+    Default="80" 
+    Mode="tcp" 
+    Description="Container Port: 80"  
+    Display="always" 
+    Required="true" 
+    Mask="false">80</Config>
+  <Config 
+    Type="Port"
+    Name="HTTPS Port" 
+    Target="443" 
+    Default="443" 
+    Mode="tcp" 
+    Description="Container Port: 443"  
+    Display="always" 
+    Required="false" 
+    Mask="false">443</Config>
+  <Config 
+    Type="Variable"
+    Name="HTTPS Redirect" 
+    Target="HTTPS_REDIRECT_PORT" 
+    Default="443" 
+    Mode="" 
+    Description="Container Variable: HTTPS_REDIRECT_PORT"  
+    Display="always" 
+    Required="false" 
+    Mask="false">443</Config>    
+  <Config 
+    Type="Path"
+    Name="SSL Cert Path" 
+    Target="/ssl" 
+    Default="/mnt/user/appdata/mqtt-admin/ssl" 
+    Mode="rw" 
+    Description="Container Path: /ssl"  
+    Display="always" 
+    Required="false" 
+    Mask="false">/mnt/user/appdata/mqtt-admin/ssl</Config>
+</Container>
