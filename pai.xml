@@ -26,6 +26,7 @@ Create default config in /etc/pai. See https://github.com/ParadoxAlarmInterface/
   <Networking>
     <Mode>br0</Mode>
   </Networking>
+  <WebUI></WebUI>
   <ExtraParams>--user $(id -u):$(id -g) </ExtraParams>
   <Config 
     Type="Path"
