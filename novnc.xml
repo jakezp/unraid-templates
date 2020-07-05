@@ -30,7 +30,7 @@ noVNC-Docker is a Docker image that bundles the noVNC client and WebSocket-to-TC
     Target="/certs" 
     Default="/mnt/user/appdata/novnc/certs" 
     Mode="rw" 
-    Description="Container Path: /certs/novnc.pem"  
+    Description="Container Path: /certs"  
     Display="always" 
     Required="true" 
     Mask="false">/mnt/user/appdata/novnc/certs</Config>
