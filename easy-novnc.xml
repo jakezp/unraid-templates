@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<Container>
+  <Name>easy-novnc</Name>
+  <Beta>False</Beta>
+  <Category>Network:Other</Category>
+  <Date>2020-07-10</Date>
+  <Overview>An easy NoVNC Container</Overview>
+  <Project>https://github.com/geek1011/easy-novnc</Project>
+  <Support>https://github.com/geek1011/easy-novnc/issues</Support>
+  <Description>An easy way to run a noVNC instance and proxy with a single binary.</Description>
+  <Icon>https://github.com/jakezp/unraid-templates/raw/master/img/novnc.png</Icon>
+  <TemplateURL>https://github.com/jakezp/unraid-templates/raw/master/easy-novnc.xml</TemplateURL>
+  <Registry>https://hub.docker.com/r/geek1011/easy-novnc</Registry>
+  <Repository>geek1011/easy-novnc</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish/>
+  </Networking>
+  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+  <ExtraParams/>
+  <Labels/>
+  <Config 
+    Type="Port"
+    Name="Exposed port" 
+    Target="8080" 
+    Default="8080" 
+    Mode="tcp" 
+    Description="Container Port: 8080"  
+    Display="always" 
+    Required="true" 
+    Mask="false">8080</Config>
+  <Config 
+    Type="Variable"
+    Name="Remote host:" 
+    Target="NOVNC_HOST" 
+    Default="10.0.1.20" 
+    Mode="" 
+    Description="Remote host"  
+    Display="always" 
+    Required="true" 
+    Mask="false">10.0.1.20</Config>
+  <Config 
+    Type="Variable"
+    Name="Remote port:" 
+    Target="NOVNC_PORT" 
+    Default="5900" Mode="" 
+    Description="Remote port" 
+    Display="always" 
+    Required="true" 
+    Mask="false">5900</Config>
+  <Config 
+    Type="Variable"
+    Name="Password option:" 
+    Target="NOVNC_NO_URL_PASSWORD" 
+    Default="true" Mode="" 
+    Description="Setting this variable to true, will prevent password in URL params" 
+    Display="always" 
+    Required="true" 
+    Mask="false">true</Config>
+  <Config 
+    Type="Variable"
+    Name="UI option:" 
+    Target="NOVNC_BASIC_UI" 
+    Default="true" Mode="" 
+    Description="Setting this variable to true, will display a basic version of the UI" 
+    Display="always" 
+    Required="true" 
+    Mask="false">true</Config>
+</Container>
