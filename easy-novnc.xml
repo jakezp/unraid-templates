@@ -33,7 +33,7 @@
     Mask="false">8080</Config>
   <Config 
     Type="Variable"
-    Name="Remote host:" 
+    Name="Remote host" 
     Target="NOVNC_HOST" 
     Default="10.0.1.20" 
     Mode="" 
@@ -43,7 +43,7 @@
     Mask="false">10.0.1.20</Config>
   <Config 
     Type="Variable"
-    Name="Remote port:" 
+    Name="Remote port" 
     Target="NOVNC_PORT" 
     Default="5900" Mode="" 
     Description="Remote port" 
@@ -61,7 +61,7 @@
     Mask="false">true</Config>
   <Config 
     Type="Variable"
-    Name="UI option:" 
+    Name="UI option" 
     Target="NOVNC_BASIC_UI" 
     Default="true" Mode="" 
     Description="Setting this variable to true, will display a basic version of the UI" 
