@@ -25,10 +25,40 @@ Ensure you create a gw2pvo.cfg configuration file in the /config directory. See 
     Type="Path"
     Name="gw2pvo config" 
     Target="/config" 
-    Default="/mnt/user/appdata/gw2pvo/config" 
+    Default="/mnt/user/appdata/gw2pvo/config/" 
     Mode="rw" 
     Description="Container Path: /config"  
     Display="always" 
     Required="true" 
-    Mask="false">/mnt/user/appdata/gw2pvo/config</Config>
+    Mask="false">/mnt/user/appdata/gw2pvo/config/</Config>
+  <Config 
+    Type="Variable"
+    Name="PVO_INTERVAL" 
+    Target="PVO_INTERVAL" 
+    Default="5" 
+    Mode="" 
+    Description="PVO_INTERVAL"  
+    Display="always" 
+    Required="false"
+    Mask="false">5</Config>
+  <Config
+   Type="Variable"
+   Name="LOG"
+   Target="LOG" 
+   Default="info" 
+   Mode="" 
+   Description="LOG (debug, info, warning, critical)" 
+   Display="always" 
+   Required="false" 
+   Mask="false">info</Config>
+  <Config
+   Type="Variable"
+   Name="TZ" 
+   Target="TZ" 
+   Default="Africa/Johannesburg" 
+   Mode=""
+   Description="TZ"
+   Display="always"
+   Required="false" 
+   Mask="false">Africa/Johannesburg</Config>
 </Container>
